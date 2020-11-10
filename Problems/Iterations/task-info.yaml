@@ -23,5 +23,9 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/2551#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/2551#comment">JetBrains
+    Academy</a></html>
+  time: Tue, 10 Nov 2020 20:48:13 UTC
 record: -1

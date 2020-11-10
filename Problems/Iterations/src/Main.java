@@ -7,7 +7,8 @@ class IteratorExecutor {
     }
 
     static void startIterations(int numberOfIterations) {
-        // invoke the method performIterationsWithCallback here
+        LoopCallback callback = iteration -> System.out.println("Iteration: " + iteration);
+        performIterationsWithCallback(numberOfIterations, callback);
     }
 }
 
