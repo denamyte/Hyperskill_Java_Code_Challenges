@@ -22,6 +22,9 @@ files:
         void onNewIteration(int iteration);
     }
   learner_created: false
+- name: src/InfinityTests.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/2551#comment
 status: Solved
 feedback:
