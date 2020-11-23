@@ -2,3 +2,4 @@ content:
 - Iterations
 - Are siblings?
 - Compact strings with AsciiCharSequence
+- Output names of the methods

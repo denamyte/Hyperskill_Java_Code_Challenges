@@ -15,27 +15,17 @@ class AsciiCharSequence implements java.lang.CharSequence {
 
     @Override
     public char charAt(int index) {
-        if (index < 0 || index >= length()) {
-            throw new IndexOutOfBoundsException(index);
-        }
         return (char) bytes[index];
     }
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        if (start < 0 || end < 0 || end > length() || start > end) {
-            throw new IndexOutOfBoundsException();
-        }
         return new AsciiCharSequence(Arrays.copyOfRange(bytes, start, end));
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (byte b : bytes) {
-            sb.append((char) b);
-        }
-        return sb.toString();
+        return new String(bytes);
     }
 
 //    public static void main(String[] args) {
