@@ -3,3 +3,5 @@ content:
 - Are siblings?
 - Compact strings with AsciiCharSequence
 - Output names of the methods
+- Sort out the classes
+- Getting current thread info
