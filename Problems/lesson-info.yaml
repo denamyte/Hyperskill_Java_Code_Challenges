@@ -15,3 +15,8 @@ content:
 - VeganPizza
 - Ordering the execution of threads
 - Calculate the number of distinct characters
+- Summing with threads
+- Multithreaded counter
+- Countdown counter
+- Counting number of instances
+- Thread-safe account
