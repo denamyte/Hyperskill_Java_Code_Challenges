@@ -5,3 +5,13 @@ content:
 - Output names of the methods
 - Sort out the classes
 - Getting current thread info
+- Message notifier as a thread
+- Numbers filter
+- String processor
+- Multiple threads
+- Starting threads
+- Writing a thread for printing numbers
+- Starting runnables
+- VeganPizza
+- Ordering the execution of threads
+- Calculate the number of distinct characters
