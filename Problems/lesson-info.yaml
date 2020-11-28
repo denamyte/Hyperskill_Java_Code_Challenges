@@ -20,3 +20,6 @@ content:
 - Countdown counter
 - Counting number of instances
 - Thread-safe account
+- Interrupting a thread
+- Handling interruptions
+- Finding and starting a thread
