@@ -59,3 +59,6 @@ content:
 - Correct the usage of non-generic class
 - Boxes are not just objects_
 - Initialize an object of a generic class
+- Simple list
+- Advanced list
+- Allocated memory
