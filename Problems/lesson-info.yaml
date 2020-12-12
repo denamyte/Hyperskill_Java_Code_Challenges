@@ -62,3 +62,7 @@ content:
 - Simple list
 - Advanced list
 - Allocated memory
+- Returning values from an anonymous class
+- Return empty string when argument is null
+- Avoid NPE
+- Out of bounds_
