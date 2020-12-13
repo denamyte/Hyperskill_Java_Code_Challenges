@@ -66,3 +66,5 @@ content:
 - Return empty string when argument is null
 - Avoid NPE
 - Out of bounds_
+- Phone
+- Sorted list
