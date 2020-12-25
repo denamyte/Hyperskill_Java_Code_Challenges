@@ -2,6 +2,25 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
+
+    static Map<Character, Integer> scoringIndices = Map.of(
+            'a', 0,
+            's', 1,
+            'd', 2,
+            'b', 3,
+            'n', 4,
+            'm', 5
+    );
+
+    static int[][] scoringTable = new int[][]{
+            {0, 1, 2, 5, 6, 7},  // a
+            {1, 0, 1, 5, 6, 7},  // s
+            {2, 1, 0, 5, 6, 7},  // d
+            {5, 6, 7, 0, 1, 2},  // b
+            {5, 6, 7, 1, 0, 1},  // n
+            {5, 6, 7, 2, 1, 0}}; // m
+        //   a  s  d  b  n  m
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String request = scanner.nextLine();
@@ -50,50 +69,31 @@ public class Main {
     }
 
     static int match(char a, char b) {
-        return (a == b) ? 0 : matchWithScoringTable(a, b);
-    }
-
-    static int matchWithScoringTable(char a, char b) {
         if (scoringIndices.containsKey(a) && scoringIndices.containsKey(b)) {
-            int aInd = scoringIndices.get(a);
-            int bInd = scoringIndices.get(b);
-            return scoringTable[aInd][bInd];
+            return scoringTable[scoringIndices.get(a)][scoringIndices.get(b)];
         }
-        return 1;
+        return a == b ? 0 : 1;
     }
-
-    static Map<Character, Integer> scoringIndices = Map.of(
-            'a', 0, 's', 1, 'd', 2, 'b', 3, 'n', 4, 'm', 5
-    );
-
-    static int[][] scoringTable = new int[][]{
-        //   a  s  d  b  n  m
-            {0, 1, 2, 5, 6, 7},  // a
-            {1, 0, 1, 5, 6, 7},  // s
-            {2, 1, 0, 5, 6, 7},  // d
-            {5, 6, 7, 0, 1, 2},  // b
-            {5, 6, 7, 1, 0, 1},  // n
-            {5, 6, 7, 2, 1, 0},  // m
-    };
 
     /** Shows the full transformation matrix from the word s to the word t. */
     static void editDistanceOutput(String s, String t) {
         int[][] distTable = calcDistanceTable(s, t);
-        s = s.toUpperCase();
-        t = t.toUpperCase();
 
         String[][] showTable = new String[s.length() + 2][t.length() + 2];
         // set the first 2 spaces in the first column and first row
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++) {
             showTable[0][i] = showTable[i][0] = " ";
+        }
 
         // set the first word (vertical)
-        for (int i = 2; i < s.length() + 2; i++)
-            showTable[i][0] = String.valueOf(s.charAt(i - 2));
+        for (int i = 2; i < s.length() + 2; i++) {
+            showTable[i][0] = String.valueOf(s.charAt(i - 2)).toUpperCase();
+        }
 
         // set the second word (horizontal)
-        for (int j = 2; j < t.length() + 2; j++)
-            showTable[0][j] = String.valueOf(t.charAt(j - 2));
+        for (int j = 2; j < t.length() + 2; j++) {
+            showTable[0][j] = String.valueOf(t.charAt(j - 2)).toUpperCase();
+        }
 
         // copy the other values from distTable into showTable
         for (int i = 0; i < s.length() + 1; i++) {
