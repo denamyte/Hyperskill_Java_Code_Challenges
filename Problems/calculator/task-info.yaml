@@ -206,8 +206,5 @@ files:
 
     }
   learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: Tue, 22 Dec 2020 22:59:20 UTC
+status: Failed
 record: -1
